@@ -11,7 +11,7 @@ redis:
 app:
   repository: public.ecr.aws/r9n4c1b3/hyuun-lab2
   tag: app-v1
-  replicas: 1
+  replicas: 2
 
 nginx:
   repository: nginx
