@@ -1,0 +1,28 @@
+db:
+  repository: public.ecr.aws/r9n4c1b3/hyuun-lab2
+  tag: db-v1
+  replicas: 1
+
+redis:
+  repository: public.ecr.aws/r9n4c1b3/hyuun-lab2
+  tag: redis-v1
+  replicas: 1
+
+app:
+  repository: public.ecr.aws/r9n4c1b3/hyuun-lab2
+  tag: app-v1
+  replicas: 1
+
+nginx:
+  repository: nginx
+  tag: latest
+  replicas: 1
+
+
+ingress:
+  healthCheckPath: /healthz
+  host: app.hyuun.shop
+  certificateArn: arn:aws:acm:ap-northeast-3:504301552141:certificate/31841d8a-a650-4214-a547-96d9d08d883f
+  group:
+    name: shared-alb
+    order: "10"
